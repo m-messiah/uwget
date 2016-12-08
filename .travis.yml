@@ -5,13 +5,14 @@ env:
   - GIMME_OS=darwin GIMME_ARCH=amd64
 
 script:
-- go build -o uwget_$GIMME_OS
+  - go build -o uwget_${GIMME_OS}
+  - ls
 
 deploy:
   provider: releases
   api_key:
     secure: egn83dapgaznuc8sB7rxp03KfEPLTtCMHyWdO8L97N/xSHUFByrqYYB6CAzCQpzqDmmZQugH9M2OEsFhzs1/3T8urQSN9Wx1d8ux9yQOBQ3F0ME0Pr1kbbQclWTFPelDbD/YtPn5zj7nc+0DL2b/sz0eTz5i5m8EzvudrrNysRCgyy4LJ+ppzClMf7etawDoxEt2g4Udn2OZNnFLk4OFa3lYp3/3NsxL5x0nsbKCV2BgI9ec6ia5ZvP2gJIhd6+TazMg5YtJPG2Gg70BvZRrYPeOo0to+32dDWokn3xFqpiwwlD64Njjs5RrYrzev88qKjZMpRylnKiigqAuGU0i2Y7AjRNOHnFcomQMb87aOFJ3GG3wlQlt3lLJw38cMdeWRX5fqTPk17XCl9+qpraPC2bFIeAlr6Wz+xCs9JN0793XWAfQ9b4HmrWwfMguT6SBIVS7G94axSeBDXj/KQ0B65LixzLo4FEmz1KZ4/E3+uO3KLBizM5K/guYydwdyGOwR/SF5C6tgXC85Mf3mEPo+iWiAOcabjoGiDwNtcLqFsF4iX9+8v2GimNfCNRnkYiMZ+k4d6MNHuu2Kl62bWHnDS6Rn3teLqjoo3+G7tsK7OCx89/bspKxqRars/DLc1OzV5sOb7QQ7SCSolvXi9zY/wrnsRK7CJuJy1sNKWpragk=
-  file: uwsgi_$GIMME_OS
+  file: uwsgi_${GIMME_OS}
   skip_cleanup: true
   on:
     repo: m-messiah/uwget
