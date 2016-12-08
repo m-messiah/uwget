@@ -16,16 +16,19 @@ Parameters:
 
 ## Examples
 
-+ Get localhost default uwsgi root
-  ```bash
-  uwget uwsgi://127.0.0.1:3031
-  ```
-+ Pass HTTP_HOST header for admin
-  ```bash
-  uwget --host=example.com uwsgi://backend:3031/admin/
-  ```
-+ Use another remote address instead of localhost
-  ```bash
-  uwget -remote=8.8.8.8 uwsgi://localhost:3031/geo/
-  ```
++   Get localhost default uwsgi root
+
+    ```bash
+    uwget uwsgi://127.0.0.1:3031
+    ```
++   Pass HTTP_HOST header for admin
+
+    ```bash
+    uwget --host=example.com uwsgi://backend:3031/admin/
+    ```
++   Use another remote address instead of localhost
+
+    ```bash
+    uwget -remote=8.8.8.8 uwsgi://localhost:3031/geo/
+    ```
 
