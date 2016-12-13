@@ -39,7 +39,10 @@ func uwsgi_pack(path, query, host, remote_addr string) []byte {
 
 func get(url *url.URL, http_host, remote_addr string) []byte {
 	uwsgi_request := uwsgi_pack(url.Path, url.RawQuery, http_host, remote_addr)
-	conn, _ := net.Dial("tcp", url.Host)
+	conn, err := net.Dial("tcp", url.Host)
+	if err != nil {
+		return []byte("No connection")
+	}
 	conn.Write(uwsgi_request)
 	var response bytes.Buffer
 	io.Copy(&response, conn)
