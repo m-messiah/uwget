@@ -1,5 +1,8 @@
 # uwget
 
+[![GitHub release](https://img.shields.io/github/release/m-messiah/uwget.svg?style=flat-square)](https://github.com/m-messiah/uwget/releases)
+[![Travis](https://img.shields.io/travis/m-messiah/uwget.svg?style=flat-square)](https://travis-ci.org/m-messiah/uwget)
+
 Simple tool for get requests to uwsgi socket (by uwsgi protocol)
 
 ## Usage
