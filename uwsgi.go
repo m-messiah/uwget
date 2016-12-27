@@ -14,7 +14,7 @@ func encode_size(message []byte) []byte {
 	return var_size
 }
 
-func uwsgi_pack(path, query, host, remote_addr string) []byte {
+func uwsgi_pack(path, query, host, remote_addr string, modifier1 int) []byte {
 	if path == "" {
 		path = "/"
 	}
@@ -34,11 +34,11 @@ func uwsgi_pack(path, query, host, remote_addr string) []byte {
 		params = append(append(params, encode_size(bytes_k)...), bytes_k...)
 		params = append(append(params, encode_size(bytes_v)...), bytes_v...)
 	}
-	return append(append(append([]byte{0}, encode_size(params)...), 0), params...)
+	return append(append(append([]byte{byte(modifier1)}, encode_size(params)...), 0), params...)
 }
 
-func get(url *url.URL, http_host, remote_addr string) []byte {
-	uwsgi_request := uwsgi_pack(url.Path, url.RawQuery, http_host, remote_addr)
+func get(url *url.URL, http_host, remote_addr string, modifier1 int) []byte {
+	uwsgi_request := uwsgi_pack(url.Path, url.RawQuery, http_host, remote_addr, modifier1)
 	conn, err := net.Dial("tcp", url.Host)
 	if err != nil {
 		return []byte("No connection")
