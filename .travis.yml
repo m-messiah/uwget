@@ -1,12 +1,12 @@
 language: go
 
 env:
-  - SUFFIX=freebsd GOOS=freebsd
-  - SUFFIX=linux32 GOOS=linux GOARCH=386
-  - SUFFIX=linux64 GOOS=linux GOARCH=amd64
-  - SUFFIX=linuxAR GOOS=linux GOARCH=arm
-  - SUFFIX=mac     GOOS=darwin
-  - SUFFIX=openbsd GOOS=openbsd
+  - SUFFIX=freebsd  GOOS=freebsd
+  - SUFFIX=linux32  GOOS=linux GOARCH=386
+  - SUFFIX=linux64  GOOS=linux GOARCH=amd64
+  - SUFFIX=linuxARM GOOS=linux GOARCH=arm
+  - SUFFIX=mac      GOOS=darwin
+  - SUFFIX=openbsd  GOOS=openbsd
 
 script:
   - go build -o uwget-$SUFFIX
