@@ -6,6 +6,7 @@ import (
 	"io"
 	"net"
 	"net/url"
+	"regexp"
 )
 
 func encode_size(message []byte) []byte {
@@ -48,4 +49,16 @@ func get(url *url.URL, http_host, remote_addr string, modifier1 int) []byte {
 	io.Copy(&response, conn)
 	defer conn.Close()
 	return response.Bytes()
+}
+
+func check_status(response []byte, expected_status string) int {
+	response_re := regexp.MustCompile(`^HTTP/[01].[01] ([0-9]{3}) `)
+	matches := response_re.FindSubmatch(response)
+	if len(matches) < 2 {
+		return 1
+	}
+	if string(matches[1]) == expected_status {
+		return 0
+	}
+	return 1
 }

@@ -15,6 +15,9 @@ Parameters:
         HTTP_HOST
   -remote string
         remote addr (default "127.0.0.1")
+  -expected-status string
+        Fail if response status not equal
+  -q    Disable output
 ```
 
 ## Examples
@@ -35,3 +38,8 @@ Parameters:
     uwget -remote=8.8.8.8 uwsgi://localhost:3031/geo/
     ```
 
++   Ping localhost and fail if not 200
+
+    ```bash
+    uwget -q -expected-status=200 uwsgi://127.0.0.1:3031/ping
+    ```
