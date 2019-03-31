@@ -15,8 +15,7 @@ deploy:
   provider: releases
   api_key:
     secure: uAYVQGtJpMLDkz1gs6Y7DCMW7LuE2ZZA7HLGH3WaGzx1XCgBMtxa4BYQZqN8YHJG3Wl5nDBfYfcCP+YvVFdOQHBznoz0zHItVJC1+O5vTTzBxMjOXlY8pHFuOA6HTquThh9gyRwt45vAMT9vQmnNKMcDidH+Y+RHhxlQrlhW5XZs4oS35XNi4rh8g7cSx0w+czzFeghJf9P+4QBaujusRO2gRpVS9AZbXh9ANLC18vIEe5DA+bPR7bsG1VT4Hg1uU83neAVUu+xcfUXJmi6lUicaR2OuMJWOcoyqt/0XSVMQo9gm8p8UhfJzWYrlXcW4GJzv3Wa40GpzDLONTOzDNqNnFVbj/w87OtLyuUC/l4Y8jHJ0UbW9EvpG2VtK6XH+smPdeb7UIsZCQFiuntEKKFIzNzz1IENNtXtrxrhRzfb1C4nzJexqq/B0Ep+A+nt72ZeuaziBag09BwXkm7ywZ1MLlprrQHavpt41P4ySbU9nv163i8z/WuAwRpum/qvvdHjdMGMs/3CaLk59CnFCy9tWJGMYwpYBg0hukBp0bPfRq899auJzBe9WNDghrYwu5CAHpmP4J71V5V56+hntoo2xc3Wn+V4ZpUCgb7EJFL6SH1nUamB9QiigXv1hhuE3d6iUDwbWJBgQYG7gcFD30z9nEE9BWqRg1pNR6IG8MAI=
-  file: uwget-*
-  file_glob: true
+  file: uwget-$SUFFIX
   skip_cleanup: true
   on:
     repo: m-messiah/uwget
