@@ -2,6 +2,7 @@
 
 [![GitHub release](https://img.shields.io/github/release/m-messiah/uwget.svg?style=flat-square)](https://github.com/m-messiah/uwget/releases)
 [![Travis](https://img.shields.io/travis/m-messiah/uwget.svg?style=flat-square)](https://travis-ci.org/m-messiah/uwget)
+[![Maintainability](https://api.codeclimate.com/v1/badges/d16037198a593681f7b0/maintainability)](https://codeclimate.com/github/m-messiah/uwget/maintainability)
 
 Simple tool for get requests to uwsgi socket (by uwsgi protocol)
 
